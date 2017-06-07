@@ -1,0 +1,39 @@
+@Getter
+@Setter
+@ToString
+@RequiredIfChecked(checked = "exportFileDestination", values = {"sftp","ftp"}, required = {"host", "user", "password", "defaultPath", "emailOnError", "semFiles"})
+@RequiredIfChecked(checked = "exportFileDestination", values = {"email"}, required = {"email"})
+public class SubscriptionDTO {
+
+    @NotEmpty
+    private String name;
+    @NotEmpty
+    private String exportType;
+    @NotEmpty
+    private String frequency;
+    @NotEmpty
+    private String startDate;
+    @NotNull
+    private Boolean emptyFile;
+    @NotNull
+    private Boolean allEvents;
+    @NotEmpty
+    private String exportFileDestination;
+    @NotEmpty
+    private String exportLocation;
+    @NotEmpty
+    private String fileFormat;
+    @NotEmpty
+    private String fileEncoding;
+    private String email;
+    private List selectedEvents;
+    private String language;
+
+    private String host;
+    private int port;
+    private String user;
+    private String password;
+    private String defaultPath;
+    private String emailOnError;
+    private Boolean semFiles;
+}
